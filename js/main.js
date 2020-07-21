@@ -1,4 +1,3 @@
-
 let btn = document.querySelector('#btn')
 
 btn.addEventListener('click', () => {
@@ -23,34 +22,33 @@ let inpPass2 = document.querySelector('#inp-pass2').value
     } else {
     
                 let ObjPerson = {
-                    'Login': inpLog,
                     'E-mail': inpEm,
-                    'Password': inpPass
+                    'Password': inpPass,
+                    'Connected' : true
         
                 }
-                localStorage.setItem('One', ObjPerson)
                 console.log(ObjPerson);
+                let lockalStorage = localStorage.setItem(inpLog,  JSON.stringify(ObjPerson))
+               setTimeout(() => {
+                window.location.href = 'own_cabinet.html'  
+               }, 1000);
+                
+            
             }
 
 
      } else{
             alert('Пароли не совпадают!')
-            console.error('Error in Pass')
+            console.error('Error in the Pass')
     }
 
 
-
-    
     
 
+}); 
 
 
-
-})
-
-
-
-
+// let Arg = (localStorage !== -1)  ?  console.log('Сначало зарегестрируйтесь') :  console.log('Пользователь зарегестрирован! Поздровляю на в личном кабинете!') // РЕШИТЬ ОШИБКУ!1111
 
 
 
